@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maeryska - Pianist and Composer of Classical Fantasy Music">
+    <meta name="author" content="Maeryska">
+    <title>Maeryska - Classical Fantasy Music</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/icons/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="branding">
+                <h1>Maeryska</h1>
+                <p>Composer of Classical Fantasy</p>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#music">Music</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="https://open.spotify.com/artist/7lLSJbc4l55HrLjrrohqwg?si=Giz0jhEiTWK0_mtXkvPodw" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                <a href="https://music.apple.com/us/artist/maeryska/1693151070" target="_blank" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
+                <a href="https://www.apple.com/itunes" target="_blank" aria-label="iTunes"><i class="fab fa-itunes"></i></a>
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/in/patrikmaryska/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </header>
+    
+    <section id="about" class="section">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="img/header.jpg" alt="Portrait of Maeryska">
+            </div>
+            <div class="about-text">
+                <h2>Meet Maeryska</h2>
+                <p>
+                    Maeryska is a classically trained pianist, visionary composer, and software developer whose music fuses emotion, imagination, and narrative. With roots in classical fantasy and cinematic scoring, her pieces blend delicate piano with sweeping orchestration.
+                </p>
+                <p>
+                    Each track is an invitation into another world—crafted with care, inspired by myth, and rich with depth. Her work resonates with those seeking beauty in every note.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MUSIC SECTION -->
+        <section class="section music-section">
+    <h2>Music</h2>
+    <p class="section-subtext">Snapshots of inspiration, performance, and behind-the-scenes magic</p>
+    <div id="music-pagination" class="music-grid">
+        <!-- dynamically generated music items will appear here -->
+    </div>
+
+    <div class="pagination-controls">
+        <button id="prev-button">Previous</button>
+        <button id="next-button">Next</button>
+    </div>
+</section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2>Gallery</h2>
+            <p class="section-subtext">Snapshots of inspiration, performance, and behind-the-scenes magic</p>
+            <div class="gallery-grid">
+                <img src="gallery1.jpg" alt="Maeryska performing">
+                <img src="gallery2.jpg" alt="Maeryska's piano">
+                <img src="gallery3.jpg" alt="Magical composition session">
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWS SECTION -->
+    <section id="news" class="section">
+        <div class="container">
+            <h2>News</h2>
+            <p class="section-subtext">Stay updated on new releases, concerts, and creative updates</p>
+            <div class="news-item">
+                <h3>New Album Release: "Enchanted Horizons"</h3>
+                <p>Maeryska’s latest album debuts next month, inviting listeners into a realm of ethereal melodies and timeless emotion.</p>
+            </div>
+            <div class="news-item">
+                <h3>Upcoming Concert Tour</h3>
+                <p>Experience Maeryska live across Europe. Dates and venues to be announced soon.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact</h2>
+            <p class="section-subtext">Let’s connect — for collaborations, inquiries, or just to say hello</p>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Maeryska. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+<script src="script/script.js"></script>
+
+
+</html>
