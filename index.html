@@ -22,18 +22,17 @@
                 <ul class="nav-menu">
                     <li><a href="#about">About</a></li>
                     <li><a href="#music">Music</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#news">News</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="social-icons">
                 <a href="https://open.spotify.com/artist/7lLSJbc4l55HrLjrrohqwg?si=Giz0jhEiTWK0_mtXkvPodw" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
                 <a href="https://music.apple.com/us/artist/maeryska/1693151070" target="_blank" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
-                <a href="https://www.apple.com/itunes" target="_blank" aria-label="iTunes"><i class="fab fa-itunes"></i></a>
-                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100089970107655" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/maeryska/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@maeryska-music" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                 <a href="https://www.linkedin.com/in/patrikmaryska/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
@@ -58,17 +57,30 @@
 
     <!-- MUSIC SECTION -->
         <section class="section music-section">
-    <h2>Music</h2>
-    <p class="section-subtext">Snapshots of inspiration, performance, and behind-the-scenes magic</p>
-    <div id="music-pagination" class="music-grid">
-        <!-- dynamically generated music items will appear here -->
-    </div>
+        <h2>Music</h2>
+        <p class="section-subtext">Snapshots of inspiration, performance, and behind-the-scenes magic</p>
+        <div id="music-pagination" class="music-grid">
+            <!-- dynamically generated music items will appear here -->
+        </div>
 
-    <div class="pagination-controls">
-        <button id="prev-button">Previous</button>
-        <button id="next-button">Next</button>
-    </div>
-</section>
+        <div class="pagination-controls">
+            <button id="prev-button">Previous</button>
+            <button id="next-button">Next</button>
+        </div>
+    </section>
+
+    <!-- NEWS SECTION -->
+    <section id="news" class="section news-section">
+        <div class="container">
+            <h2>Latest News</h2>
+            <p class="section-subtext">Stay updated on new releases, concerts, and creative updates</p>
+            <div id="news-feed" class="news-grid"></div>
+            <div class="pagination-controls">
+                <button id="prev-news" disabled>Previous</button>
+                <button id="next-news">Next</button>
+            </div>
+        </div>
+    </section>
 
     <!-- GALLERY SECTION -->
     <section id="gallery" class="section">
@@ -83,28 +95,13 @@
         </div>
     </section>
 
-    <!-- NEWS SECTION -->
-    <section id="news" class="section">
-        <div class="container">
-            <h2>News</h2>
-            <p class="section-subtext">Stay updated on new releases, concerts, and creative updates</p>
-            <div class="news-item">
-                <h3>New Album Release: "Enchanted Horizons"</h3>
-                <p>Maeryska’s latest album debuts next month, inviting listeners into a realm of ethereal melodies and timeless emotion.</p>
-            </div>
-            <div class="news-item">
-                <h3>Upcoming Concert Tour</h3>
-                <p>Experience Maeryska live across Europe. Dates and venues to be announced soon.</p>
-            </div>
-        </div>
-    </section>
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="section">
         <div class="container">
             <h2>Contact</h2>
             <p class="section-subtext">Let’s connect — for collaborations, inquiries, or just to say hello</p>
-            <form action="#" method="post">
+            <form action="https://formsubmit.co/maeryskamusic@gmail.com" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
@@ -115,7 +112,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Maeryska. All Rights Reserved.</p>
+            <p>&copy; 2025 Maeryska. All Rights Reserved.</p>
         </div>
     </footer>
 </body>
