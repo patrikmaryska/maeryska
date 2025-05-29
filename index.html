@@ -3,22 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Maeryska - Pianist and Composer of Classical Fantasy Music">
+    <meta name="description" content="Maeryska is a pianist, composer, and software engineer blending classical, fantasy, and cinematic music. Discover music, news, gallery, and contact.">
     <meta name="author" content="Maeryska">
-    <meta name="keywords" content="Maeryska, classical music, fantasy music, composer, pianist, orchestral, piano music, digital composition, cinematic music">
-    <meta property="og:title" content="Maeryska - Pianist and Composer of emotional, orchestral, and piano Music">
-    <meta property="og:description" content=".">
+    <meta name="keywords" content="Maeryska, classical music, fantasy music, composer, pianist, orchestral, piano music, digital composition, cinematic music, software engineer">
+    <meta property="og:title" content="Maeryska - Composer & Pianist | Classical, Fantasy & Cinematic Music">
+    <meta property="og:description" content="Explore the world of Maeryska, a composer and pianist blending classical, fantasy, and cinematic music.">
     <meta property="og:image" content="https://maeryska.com/img/header.jpg">
     <meta property="og:url" content="https://maeryska.com">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Maeryska - Classical Music</title>
+    <link rel="canonical" href="https://maeryska.com/">
+    <title>Maeryska - Composer & Pianist | Classical, Fantasy & Cinematic Music</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
     <link rel="icon" href="img/icons/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Maeryska",
+      "jobTitle": "Composer, Pianist, Software Engineer",
+      "image": "https://maeryska.com/img/header.jpg",
+      "sameAs": [
+        "https://open.spotify.com/artist/7lLSJbc4l55HrLjrrohqwg?si=Giz0jhEiTWK0_mtXkvPodw",
+        "https://music.apple.com/us/artist/maeryska/1693151070",
+        "https://www.facebook.com/profile.php?id=100089970107655",
+        "https://www.instagram.com/maeryska/",
+        "https://www.youtube.com/@maeryska-music",
+        "https://www.linkedin.com/in/patrikmaryska/"
+      ],
+      "url": "https://maeryska.com"
+    }
+    </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <div class="container nav-container">
             <div class="branding">
@@ -47,77 +67,75 @@
         </div>
     </header>
     
-    <section id="about" class="section">
-        <div class="container about-container">
-            <div class="about-image">
-                <img src="img/header.jpg" alt="Portrait of Maeryska">
+   <main id="main-content">
+        <section id="about" class="section" aria-labelledby="about-heading">
+            <div class="container about-container">
+                <div class="about-image">
+                    <img src="img/header.jpg" alt="Portrait of Maeryska, composer and pianist">
+                </div>
+                <div class="about-text">
+                    <h2 id="about-heading">Meet Maeryska</h2>
+                    <p>
+                        Maeryska is a pianist turned musical storyteller, whose journey began at sixteen with his first band, <em>Phoenix in Fire</em>. Since then, he has performed with multiple bands and explored a wide range of genres—from orchestral fantasy to cinematic soundscapes—all shaped by his deep emotional range and love for narrative-driven music.
+                    </p>
+                    <p>
+                        Proficient in piano, keyboards, and a variety of flutes, Maeryska brings his musical visions to life through both live instrumentation and digital composition. His pieces are rooted in real-life experiences, yet rise into mythical and fantastical realms—reflecting a constant clash between raw emotion and a deeply analytical mind.
+                    </p>
+                    <p>
+                        With a Master’s degree in Software Engineering, he seamlessly blends the logic of technology with the chaos of creativity.
+                    </p>
+                </div>
             </div>
-            <div class="about-text">
-            <h2>Meet Maeryska</h2>
-            <p>
-                Maeryska is a pianist turned musical storyteller, whose journey began at sixteen with his first musical child first band, <em>Phoenix in Fire</em>. Since then, he has performed with multiple bands and explored a wide range of genres—from orchestral fantasy to cinematic soundscapes—all shaped by his deep emotional range and love for narrative-driven music.
-            </p>
-            <p>
-                Proficient in piano, keyboards, and a variety of flutes, Maeryska brings his musical visions to life through both live instrumentation and digital composition. His pieces are rooted in real-life experiences, yet rise into mythical and fantastical realms—reflecting a constant clash between raw emotion and a deeply analytical mind.
-            </p>
-            <p>
-                With a Master’s degree in Software Engineering, he seamlessly blends the logic of technology with the chaos of creativity. 
-            </p>
+        </section>
+        <section id="music" class="section music-section" aria-labelledby="music-heading">
+            <h2 id="music-heading">Music</h2>
+            <p class="section-subtext">Listen to original compositions and performances by Maeryska.</p>
+            <div id="music-pagination" class="music-grid">
+                <!-- dynamically generated music items will appear here -->
             </div>
-        </div>
-    </section>
-
-
-        <section class="section music-section">
-        <h2>Music</h2>
-        <p class="section-subtext">Snapshots of inspiration, performance, and behind-the-scenes magic</p>
-        <div id="music-pagination" class="music-grid">
-            <!-- dynamically generated music items will appear here -->
-        </div>
-
-        <div class="pagination-controls">
-            <button id="prev-button">Previous</button>
-            <button id="next-button">Next</button>
-        </div>
-    </section>
-
-    <section id="news" class="section news-section">
-        <div class="container">
-            <h2>Latest News</h2>
-            <p class="section-subtext">Stay updated on new releases, concerts, and creative updates</p>
-            <div id="news-feed" class="news-grid"></div>
             <div class="pagination-controls">
-                <button id="prev-news" disabled>Previous</button>
-                <button id="next-news">Next</button>
+                <button id="prev-button">Previous</button>
+                <button id="next-button">Next</button>
             </div>
-        </div>
-    </section>
-
-    <section id="gallery" class="section">
-        <div class="container">
-            <h2>Gallery</h2>
-            <p class="section-subtext">Snapshots of inspiration, performance, and behind-the-scenes magic</p>
-            <div id="gallery-grid" class="gallery-grid"></div>
-            <div class="pagination-controls">
-                <button id="prev-gallery">Previous</button>
-                <button id="next-gallery">Next</button>
+        </section>
+        <section id="news" class="section news-section" aria-labelledby="news-heading">
+            <div class="container">
+                <h2 id="news-heading">Latest News</h2>
+                <p class="section-subtext">Stay updated on new releases, concerts, and creative updates.</p>
+                <div id="news-feed" class="news-grid"></div>
+                <div class="pagination-controls">
+                    <button id="prev-news" disabled>Previous</button>
+                    <button id="next-news">Next</button>
+                </div>
             </div>
-        </div>
-    </section>
-
-
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Contact</h2>
-            <p class="section-subtext">Let’s connect — for collaborations, inquiries, or just to say hello</p>
-            <form action="https://formsubmit.co/maeryskamusic@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
+        </section>
+        <section id="gallery" class="section" aria-labelledby="gallery-heading">
+            <div class="container">
+                <h2 id="gallery-heading">Gallery</h2>
+                <p class="section-subtext">Snapshots of inspiration, performance, and behind-the-scenes magic.</p>
+                <div id="gallery-grid" class="gallery-grid"></div>
+                <div class="pagination-controls">
+                    <button id="prev-gallery">Previous</button>
+                    <button id="next-gallery">Next</button>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section" aria-labelledby="contact-heading">
+            <div class="container">
+                <h2 id="contact-heading">Contact</h2>
+                <p class="section-subtext">Let’s connect — for collaborations, inquiries, or just to say hello.</p>
+                <form action="https://formsubmit.co/maeryskamusic@gmail.com" method="POST">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" name="name" placeholder="Your Name" required>
+                    <label for="email">Email</label>
+                    <input id="email" type="email" name="email" placeholder="Your Email" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
