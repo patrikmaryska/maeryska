@@ -1,0 +1,56 @@
+[
+  {
+    "title": "New song released - Dance through the Darkness (piano version)",
+    "content": "The song about fighting everything wrong in possitive thinking. We can do it! And now in pure piano version it out..",
+    "date": "2025-02-10",
+    "type": "Single Release",
+    "links": {
+      "spotify": "https://open.spotify.com/track/5JOR9fbmiqMXhwds3bX9M7?si=f340e9739ee34990",
+      "youtube": "https://www.youtube.com/watch?v=L4duXNkXbbw",
+      "apple": "https://music.apple.com/us/song/dance-through-the-darkness-piano-version/1786985290"
+    }
+  },
+  {
+    "title": "New song released - Dance through the Darkness",
+    "content": "The song about fighting everything wrong in possitive thinking. We can do it!",
+    "date": "2025-02-01",
+    "type": "Single Release",
+    "links": {
+      "spotify": "https://open.spotify.com/track/56c36GTYATaQKKCNP4wlK5?si=5414728b91784336",
+      "youtube": "https://www.youtube.com/watch?v=JyKypGUqeIY",
+      "apple": "https://music.apple.com/us/song/dance-through-the-darkness/1780105170"
+    }
+  },
+  {
+    "title": "New song released - Hail to Mother Nature",
+    "content": "The song and the tribute to our beloved Mother Nature.",
+    "date": "2024-04-01",
+    "type": "Single Release",
+    "links": {
+      "spotify": "https://open.spotify.com/track/7fs5PWwkztqgip0IWKskjm?si=a78eb1aba5974c03",
+      "youtube": "https://youtu.be/RGb6mcluKs0?si=Q453P-m9A6RLYQSh",
+      "apple": "https://music.apple.com/us/song/hail-to-mother-nature/1706458037"
+    }
+  },
+  {
+    "title": "Behind the Scenes: Studio Diary",
+    "content": "A glimpse into the creative process of Maeryska’s latest compositions.",
+    "date": "2025-05-25",
+    "type": "Blog",
+    "links": {
+      "youtube": "https://youtube.com/watch?v=example2"
+    }
+  },
+  {
+    "title": "Fan Club Update",
+    "content": "New rewards, early access tickets, and exclusive content are now live for fan club members!",
+    "date": "2025-05-20",
+    "type": "Information"
+  }, 
+  {
+    "title": "Fan Club Update",
+    "content": "New rewards, early access tickets, and exclusive content are now live for fan club members!",
+    "date": "2025-05-20",
+    "type": "Concert"
+  }
+]

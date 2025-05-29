@@ -1,38 +1,31 @@
-const songs = [
-    {
-        img: 'img/songs/dance_thorugh_the_darkness_piano.jpg',
-        title: 'Dance through the Darkness (Piano version)',
-        link: 'https://open.spotify.com/track/5JOR9fbmiqMXhwds3bX9M7?si=f340e9739ee34990'
-    },
-    {
-        img: 'img/songs/dance_through_darkness.jpg',
-        title: 'Dance through the Darkness',
-        link: 'https://open.spotify.com/track/56c36GTYATaQKKCNP4wlK5?si=5414728b91784336'
-    },
-    {
-        img: 'img/songs/hail_to_mother.jpg',
-        title: 'Hail to mother nature',
-        link: 'https://open.spotify.com/track/7fs5PWwkztqgip0IWKskjm?si=a78eb1aba5974c03'
-    },
-    {
-        img: 'img/songs/dance_of_fantasy.jpg',
-        title: 'Dance of Fantasy',
-        link: 'https://open.spotify.com/track/2c4Nd6u1todTNaU8lDzLNb?si=6198ff3b172f4a20'
-    },
-    {
-        img: 'img/songs/sorry.jpg',
-        title: 'I am sorry for my heart',
-        link: 'https://open.spotify.com/track/7emwOnWoYdspeZI7XlMeXh?si=239f7059c4cb4453'
-    },
-    {
-        img: 'img/songs/song6.jpg',
-        title: 'Timeless Tales',
-        link: 'https://open.spotify.com/track/6example'
-    }
-];
+let songs = [];
+let newsItems = [];
 
 let currentPage = 0;
 const itemsPerPage = 4;
+
+let newsPage = 0;
+const newsPerPage = 2;
+
+async function loadSongs() {
+    try {
+        const response = await fetch('script/music.json');
+        songs = await response.json();
+        renderSongs();
+    } catch (error) {
+        console.error('Error loading songs:', error);
+    }
+}
+
+async function loadNews() {
+    try {
+        const response = await fetch('script/news.json');
+        newsItems = await response.json();
+        renderNews();
+    } catch (error) {
+        console.error('Error loading news:', error);
+    }
+}
 
 function renderSongs() {
     const musicPagination = document.getElementById('music-pagination');
@@ -58,58 +51,6 @@ function renderSongs() {
     document.getElementById('prev-button').disabled = currentPage === 0;
     document.getElementById('next-button').disabled = end >= songs.length;
 }
-
-document.getElementById('prev-button').addEventListener('click', () => {
-    if (currentPage > 0) {
-        currentPage--;
-        renderSongs();
-    }
-});
-
-document.getElementById('next-button').addEventListener('click', () => {
-    if ((currentPage + 1) * itemsPerPage < songs.length) {
-        currentPage++;
-        renderSongs();
-    }
-});
-
-const newsItems = [
-    {
-        title: 'New Album Release: "Enchanted Horizons"',
-        content: 'Maeryska’s latest album debuts next month, inviting listeners into a realm of ethereal melodies and timeless emotion.',
-        date: '2025-06-10',
-        type: 'Single Release',
-        links: {
-            spotify: 'https://open.spotify.com/album/example',
-            youtube: 'https://www.youtube.com/watch?v=-MgiI8J5PCQ',
-            apple: 'https://music.apple.com/album/example'
-        }
-    },
-    {
-        title: 'Upcoming Concert Tour',
-        content: 'Experience Maeryska live across Europe. Dates and venues to be announced soon.',
-        date: '2025-06-01',
-        type: 'Concert'
-    },
-    {
-        title: 'Behind the Scenes: Studio Diary',
-        content: 'A glimpse into the creative process of Maeryska’s latest compositions.',
-        date: '2025-05-25',
-        type: 'Blog',
-        links: {
-            youtube: 'https://youtube.com/watch?v=example2'
-        }
-    },
-    {
-        title: 'Fan Club Update',
-        content: 'New rewards, early access tickets, and exclusive content are now live for fan club members!',
-        date: '2025-05-20',
-        type: 'Information'
-    }
-];
-
-let newsPage = 0;
-const newsPerPage = 2;
 
 function renderNews() {
     const container = document.getElementById('news-feed');
@@ -178,6 +119,20 @@ function renderNews() {
     document.getElementById('next-news').disabled = end >= newsItems.length;
 }
 
+document.getElementById('prev-button').addEventListener('click', () => {
+    if (currentPage > 0) {
+        currentPage--;
+        renderSongs();
+    }
+});
+
+document.getElementById('next-button').addEventListener('click', () => {
+    if ((currentPage + 1) * itemsPerPage < songs.length) {
+        currentPage++;
+        renderSongs();
+    }
+});
+
 document.getElementById('prev-news').addEventListener('click', () => {
     if (newsPage > 0) {
         newsPage--;
@@ -193,6 +148,6 @@ document.getElementById('next-news').addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    renderNews();
-    renderSongs();
+    loadSongs();
+    loadNews();
 });
