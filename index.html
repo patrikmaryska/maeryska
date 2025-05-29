@@ -5,19 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Maeryska - Pianist and Composer of Classical Fantasy Music">
     <meta name="author" content="Maeryska">
-    <title>Maeryska - Classical Fantasy Music</title>
+    <meta name="keywords" content="Maeryska, classical music, fantasy music, composer, pianist, orchestral, piano music, digital composition, cinematic music">
+    <meta property="og:title" content="Maeryska - Pianist and Composer of emotional, orchestral, and piano Music">
+    <meta property="og:description" content=".">
+    <meta property="og:image" content="https://maeryska.com/img/header.jpg">
+    <meta property="og:url" content="https://maeryska.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Maeryska - Classical Music</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
     <link rel="icon" href="img/icons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
 </head>
 <body>
     <header>
         <div class="container nav-container">
             <div class="branding">
                 <h1>Maeryska</h1>
-                <p>Composer of Classical Fantasy</p>
+                <p class="title">Music Composer & Pianist</p>
+                <p class="subtitle">Software Engineer</p>
             </div>
+        </div>
             <nav>
                 <ul class="nav-menu">
                     <li><a href="#about">About</a></li>
@@ -44,18 +53,21 @@
                 <img src="img/header.jpg" alt="Portrait of Maeryska">
             </div>
             <div class="about-text">
-                <h2>Meet Maeryska</h2>
-                <p>
-                    Maeryska is a classically trained pianist, visionary composer, and software developer whose music fuses emotion, imagination, and narrative. With roots in classical fantasy and cinematic scoring, her pieces blend delicate piano with sweeping orchestration.
-                </p>
-                <p>
-                    Each track is an invitation into another world—crafted with care, inspired by myth, and rich with depth. Her work resonates with those seeking beauty in every note.
-                </p>
+            <h2>Meet Maeryska</h2>
+            <p>
+                Maeryska is a pianist turned musical storyteller, whose journey began at sixteen with his first musical child first band, <em>Phoenix in Fire</em>. Since then, he has performed with multiple bands and explored a wide range of genres—from orchestral fantasy to cinematic soundscapes—all shaped by his deep emotional range and love for narrative-driven music.
+            </p>
+            <p>
+                Proficient in piano, keyboards, and a variety of flutes, Maeryska brings his musical visions to life through both live instrumentation and digital composition. His pieces are rooted in real-life experiences, yet rise into mythical and fantastical realms—reflecting a constant clash between raw emotion and a deeply analytical mind.
+            </p>
+            <p>
+                With a Master’s degree in Software Engineering, he seamlessly blends the logic of technology with the chaos of creativity. 
+            </p>
             </div>
         </div>
     </section>
 
-    <!-- MUSIC SECTION -->
+
         <section class="section music-section">
         <h2>Music</h2>
         <p class="section-subtext">Snapshots of inspiration, performance, and behind-the-scenes magic</p>
@@ -69,7 +81,6 @@
         </div>
     </section>
 
-    <!-- NEWS SECTION -->
     <section id="news" class="section news-section">
         <div class="container">
             <h2>Latest News</h2>
@@ -82,21 +93,19 @@
         </div>
     </section>
 
-    <!-- GALLERY SECTION -->
     <section id="gallery" class="section">
         <div class="container">
             <h2>Gallery</h2>
             <p class="section-subtext">Snapshots of inspiration, performance, and behind-the-scenes magic</p>
-            <div class="gallery-grid">
-                <img src="gallery1.jpg" alt="Maeryska performing">
-                <img src="gallery2.jpg" alt="Maeryska's piano">
-                <img src="gallery3.jpg" alt="Magical composition session">
+            <div id="gallery-grid" class="gallery-grid"></div>
+            <div class="pagination-controls">
+                <button id="prev-gallery">Previous</button>
+                <button id="next-gallery">Next</button>
             </div>
         </div>
     </section>
 
 
-    <!-- CONTACT SECTION -->
     <section id="contact" class="section">
         <div class="container">
             <h2>Contact</h2>
@@ -112,12 +121,11 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Maeryska. All Rights Reserved.</p>
+            <p>&copy; 2025 Maeryska. All Rights Reserved. Created by Maeryska</p>
         </div>
     </footer>
 </body>
 
-<script src="script/script.js"></script>
-
+<script src="script/script.js" defer></script>
 
 </html>

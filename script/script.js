@@ -147,6 +147,51 @@ document.getElementById('next-news').addEventListener('click', () => {
     }
 });
 
+let galleryImages = [
+    "img/gallery/keys1.JPG",
+    "img/gallery/keys2.jpg",
+    "img/gallery/keys3.jpg",
+    "img/gallery/keys4.jpg",
+    "img/gallery/keys5.JPG"
+];
+let galleryPage = 0;
+const galleryPerPage = 3;
+
+function renderGallery() {
+    const start = galleryPage * galleryPerPage;
+    const end = start + galleryPerPage;
+    const galleryGrid = document.getElementById('gallery-grid');
+    galleryGrid.innerHTML = '';
+
+    galleryImages.slice(start, end).forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = "Gallery image";
+        galleryGrid.appendChild(img);
+    });
+
+    document.getElementById('prev-gallery').disabled = galleryPage === 0;
+    document.getElementById('next-gallery').disabled = end >= galleryImages.length;
+}
+
+document.getElementById('prev-gallery').addEventListener('click', () => {
+    if (galleryPage > 0) {
+        galleryPage--;
+        renderGallery();
+    }
+});
+
+document.getElementById('next-gallery').addEventListener('click', () => {
+    if ((galleryPage + 1) * galleryPerPage < galleryImages.length) {
+        galleryPage++;
+        renderGallery();
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderGallery();
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     loadSongs();
     loadNews();

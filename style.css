@@ -458,3 +458,29 @@ h2 {
 .news-type i {
     font-size: 1rem;
 }
+
+.branding {
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.branding h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #fff;
+    letter-spacing: 1.5px;
+}
+
+.branding .title {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #ffd700;
+    margin-bottom: 4px;
+}
+
+.branding .subtitle {
+    font-size: 1.1rem;
+    color: #ccc;
+    letter-spacing: 0.5px;
+}
