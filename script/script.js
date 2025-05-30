@@ -1,80 +1,66 @@
-let songs = [];
-let newsItems = [];
+function onReady(fn) {
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
+}
 
+function paginate(arr, page, perPage) {
+    const start = page * perPage;
+    return arr.slice(start, start + perPage);
+}
+
+let songs = [];
 let currentPage = 0;
 const itemsPerPage = 4;
 
-let newsPage = 0;
-const newsPerPage = 2;
-
-async function loadSongs() {
-    try {
-        const response = await fetch('script/music.json');
-        songs = await response.json();
-        renderSongs();
-    } catch (error) {
-        console.error('Error loading songs:', error);
-    }
-}
-
-async function loadNews() {
-    try {
-        const response = await fetch('script/news.json');
-        newsItems = await response.json();
-        renderNews();
-    } catch (error) {
-        console.error('Error loading news:', error);
-    }
+async function loadJSON(url) {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Failed to fetch ${url}`);
+    return response.json();
 }
 
 function renderSongs() {
     const musicPagination = document.getElementById('music-pagination');
     musicPagination.innerHTML = '';
+    const pageSongs = paginate(songs, currentPage, itemsPerPage);
 
-    const start = currentPage * itemsPerPage;
-    const end = start + itemsPerPage;
-
-    songs.slice(start, end).forEach(song => {
+    pageSongs.forEach(song => {
         const item = document.createElement('div');
-        item.classList.add('music-item');
-
+        item.className = 'music-item';
         item.innerHTML = `
             <a href="${song.link}" target="_blank" rel="noopener noreferrer">
                 <img src="${song.img}" alt="${song.title}">
             </a>
             <div class="song-title">${song.title}</div>
         `;
-
         musicPagination.appendChild(item);
     });
 
     document.getElementById('prev-button').disabled = currentPage === 0;
-    document.getElementById('next-button').disabled = end >= songs.length;
+    document.getElementById('next-button').disabled = (currentPage + 1) * itemsPerPage >= songs.length;
 }
+
+let newsItems = [];
+let newsPage = 0;
+const newsPerPage = 2;
+
+const typeIconMap = {
+    'Single Release': { icon: 'fa-music', color: '#d63384' },
+    'Blog': { icon: 'fa-pen-nib', color: '#20c997' },
+    'Concert': { icon: 'fa-ticket-alt', color: '#0d6efd' },
+    'Information': { icon: 'fa-info-circle', color: '#6c757d' }
+};
 
 function renderNews() {
     const container = document.getElementById('news-feed');
     container.innerHTML = '';
+    const pageNews = paginate(newsItems, newsPage, newsPerPage);
 
-    const start = newsPage * newsPerPage;
-    const end = start + newsPerPage;
-
-    newsItems.slice(start, end).forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'news-card';
-
-        const typeIconMap = {
-            'Single Release': { icon: 'fa-music', color: '#d63384' },
-            'Blog': { icon: 'fa-pen-nib', color: '#20c997' },
-            'Concert': { icon: 'fa-ticket-alt', color: '#0d6efd' },
-            'Information': { icon: 'fa-info-circle', color: '#6c757d' }
-        };
-
+    pageNews.forEach(item => {
         const type = item.type || 'Information';
-        const typeMeta = typeIconMap[type] || typeIconMap['Information'];
+        const { icon, color } = typeIconMap[type] || typeIconMap['Information'];
         const typeHtml = `
-            <div class="news-type" style="--type-color: ${typeMeta.color}">
-                <i class="fas ${typeMeta.icon}"></i>
+            <div class="news-type" style="--type-color: ${color}">
+                <i class="fas ${icon}"></i>
                 <span>${type}</span>
             </div>
         `;
@@ -103,6 +89,8 @@ function renderNews() {
             </div>
         ` : '';
 
+        const card = document.createElement('div');
+        card.className = 'news-card';
         card.innerHTML = `
             ${typeHtml}
             <div class="news-date">${new Date(item.date).toLocaleDateString()}</div>
@@ -111,59 +99,29 @@ function renderNews() {
             ${youtubeEmbed}
             ${linksHtml}
         `;
-
         container.appendChild(card);
     });
 
     document.getElementById('prev-news').disabled = newsPage === 0;
-    document.getElementById('next-news').disabled = end >= newsItems.length;
+    document.getElementById('next-news').disabled = (newsPage + 1) * newsPerPage >= newsItems.length;
 }
 
-document.getElementById('prev-button').addEventListener('click', () => {
-    if (currentPage > 0) {
-        currentPage--;
-        renderSongs();
-    }
-});
-
-document.getElementById('next-button').addEventListener('click', () => {
-    if ((currentPage + 1) * itemsPerPage < songs.length) {
-        currentPage++;
-        renderSongs();
-    }
-});
-
-document.getElementById('prev-news').addEventListener('click', () => {
-    if (newsPage > 0) {
-        newsPage--;
-        renderNews();
-    }
-});
-
-document.getElementById('next-news').addEventListener('click', () => {
-    if ((newsPage + 1) * newsPerPage < newsItems.length) {
-        newsPage++;
-        renderNews();
-    }
-});
-
-let galleryImages = [
+const galleryImages = [
     "img/gallery/keys1.JPG",
     "img/gallery/keys2.jpg",
     "img/gallery/keys3.jpg",
-    "img/gallery/keys4.jpg",
+    "img/gallery/keys8.jpg",
     "img/gallery/keys5.JPG"
 ];
 let galleryPage = 0;
 const galleryPerPage = 3;
 
 function renderGallery() {
-    const start = galleryPage * galleryPerPage;
-    const end = start + galleryPerPage;
     const galleryGrid = document.getElementById('gallery-grid');
     galleryGrid.innerHTML = '';
+    const pageImages = paginate(galleryImages, galleryPage, galleryPerPage);
 
-    galleryImages.slice(start, end).forEach(src => {
+    pageImages.forEach(src => {
         const img = document.createElement('img');
         img.src = src;
         img.alt = "Gallery image";
@@ -171,28 +129,35 @@ function renderGallery() {
     });
 
     document.getElementById('prev-gallery').disabled = galleryPage === 0;
-    document.getElementById('next-gallery').disabled = end >= galleryImages.length;
+    document.getElementById('next-gallery').disabled = (galleryPage + 1) * galleryPerPage >= galleryImages.length;
 }
 
-document.getElementById('prev-gallery').addEventListener('click', () => {
-    if (galleryPage > 0) {
-        galleryPage--;
-        renderGallery();
-    }
-});
+function addPaginationHandlers() {
+    [
+        { id: 'prev-button', fn: () => { if (currentPage > 0) { currentPage--; renderSongs(); } } },
+        { id: 'next-button', fn: () => { if ((currentPage + 1) * itemsPerPage < songs.length) { currentPage++; renderSongs(); } } },
+        { id: 'prev-news', fn: () => { if (newsPage > 0) { newsPage--; renderNews(); } } },
+        { id: 'next-news', fn: () => { if ((newsPage + 1) * newsPerPage < newsItems.length) { newsPage++; renderNews(); } } },
+        { id: 'prev-gallery', fn: () => { if (galleryPage > 0) { galleryPage--; renderGallery(); } } },
+        { id: 'next-gallery', fn: () => { if ((galleryPage + 1) * galleryPerPage < galleryImages.length) { galleryPage++; renderGallery(); } } }
+    ].forEach(({ id, fn }) => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('click', fn);
+    });
+}
 
-document.getElementById('next-gallery').addEventListener('click', () => {
-    if ((galleryPage + 1) * galleryPerPage < galleryImages.length) {
-        galleryPage++;
-        renderGallery();
-    }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
+onReady(async () => {
+    addPaginationHandlers();
     renderGallery();
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadSongs();
-    loadNews();
+    try {
+        [songs, newsItems] = await Promise.all([
+            loadJSON('script/music.json'),
+            loadJSON('script/news.json')
+        ]);
+        renderSongs();
+        renderNews();
+    } catch (error) {
+        console.error('Error loading data:', error);
+    }
 });

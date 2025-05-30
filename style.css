@@ -514,3 +514,37 @@ h2 {
     outline: 2px solid #222;
     box-shadow: 0 4px 16px rgba(0,0,0,0.25);
 }
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.about-quote {
+    font-style: italic;
+    margin-top: 1.5em;
+    padding-left: 1em;
+    border-left: 3px solid #ccc;
+    color: #555;
+}
+
+.about-quote footer {
+    margin-top: 0.5em;
+    font-style: normal;
+    font-weight: 600;
+    color: #888;
+}
+
+.about-icon {
+    color: #6b6b6b; 
+    margin-right: 0.5em;
+    font-size: 1.2em;
+    vertical-align: middle;
+}

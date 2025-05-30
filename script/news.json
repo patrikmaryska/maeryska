@@ -33,6 +33,17 @@
     }
   },
   {
+    "title": "New song released - Dance of Fantasy feat. Hana Adámková",
+    "content": "Who does not like to fantasy",
+    "date": "2023-04-01",
+    "type": "Single Release",
+    "links": {
+      "spotify": "https://open.spotify.com/track/2c4Nd6u1todTNaU8lDzLNb?si=6198ff3b172f4a20",
+      "youtube": "https://www.youtube.com/watch?v=Xfqc2utI4e0",
+      "apple": "https://music.apple.com/us/album/dance-of-fantasy-single/1705698895"
+    }
+  },
+  {
     "title": "Behind the Scenes: Studio Diary",
     "content": "A glimpse into the creative process of Maeryska’s latest compositions.",
     "date": "2025-05-25",
@@ -43,13 +54,13 @@
   },
   {
     "title": "Fan Club Update",
-    "content": "New rewards, early access tickets, and exclusive content are now live for fan club members!",
+    "content": "Working on a new song called River of time!",
     "date": "2025-05-20",
     "type": "Information"
   }, 
   {
-    "title": "Fan Club Update",
-    "content": "New rewards, early access tickets, and exclusive content are now live for fan club members!",
+    "title": "Concert in MC Fabrika, České Budějovice",
+    "content": "New concert at MC Fabrika in České Budějovice!",
     "date": "2025-05-20",
     "type": "Concert"
   }
