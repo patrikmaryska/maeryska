@@ -89,17 +89,18 @@ function renderNews() {
             </div>
         ` : '';
 
-        const card = document.createElement('div');
-        card.className = 'news-card';
-        card.innerHTML = `
-            ${typeHtml}
-            <div class="news-date">${new Date(item.date).toLocaleDateString()}</div>
-            <h3>${item.title}</h3>
-            <p>${item.content}</p>
-            ${youtubeEmbed}
-            ${linksHtml}
-        `;
-        container.appendChild(card);
+    const card = document.createElement('div');
+    card.className = 'news-card';
+    card.innerHTML = `
+        ${typeHtml}
+        <div class="news-date">${new Date(item.date).toLocaleDateString()}</div>
+        <h3>${item.title}</h3>
+        <p>${item.content}</p>
+        ${item.img ? `<img src="${item.img}" alt="${item.title}" class="news-img">` : ''}
+        ${youtubeEmbed}
+        ${linksHtml}
+    `;
+    container.appendChild(card);
     });
 
     document.getElementById('prev-news').disabled = newsPage === 0;
@@ -111,7 +112,11 @@ const galleryImages = [
     "img/gallery/keys2.jpg",
     "img/gallery/keys3.jpg",
     "img/gallery/keys8.jpg",
-    "img/gallery/keys5.JPG"
+    "img/gallery/keys9.JPG",
+    "img/gallery/keys10.JPG",
+    "img/gallery/keys2.JPG",
+     "img/gallery/keys5.JPG",
+     "img/blogs/agony_zk_18012026.jpg",
 ];
 let galleryPage = 0;
 const galleryPerPage = 3;
