@@ -27,10 +27,12 @@ function renderSongs() {
         const item = document.createElement('div');
         item.className = 'music-item';
         item.innerHTML = `
-            <a href="${song.link}" target="_blank" rel="noopener noreferrer">
-                <img src="${song.img}" alt="${song.title}">
-            </a>
+            <img src="${song.img}" alt="${song.title}">
             <div class="song-title">${song.title}</div>
+            <div class="music-links">
+                ${song.spotify ? `<a href="${song.spotify}" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><i class="fab fa-spotify"></i></a>` : ''}
+                ${song.apple ? `<a href="${song.apple}" target="_blank" rel="noopener noreferrer" aria-label="Apple Music"><i class="fab fa-apple"></i></a>` : ''}
+            </div>
         `;
         musicPagination.appendChild(item);
     });

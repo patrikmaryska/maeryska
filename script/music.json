@@ -1,32 +1,44 @@
 [
   {
+    "img": "img/songs/before_the_silence.png",
+    "title": "Before the Silence",
+    "spotify": "https://open.spotify.com/track/494zqLWJ7DCr2UxLsl1beS?si=17fe5904d69842b1",
+    "apple": "https://music.apple.com/us/song/before-the-silence-wins/1875247726"
+   },
+  {
     "img": "img/songs/requiem_for_tommorrow.png",
     "title": "Requiem for Tommorrow",
-    "link": "https://open.spotify.com/track/2HJ0o93oZL0Nznaimc6MYv?si=e9a3c29e6c4c450a"
+    "spotify": "https://open.spotify.com/track/2HJ0o93oZL0Nznaimc6MYv?si=ad070402cf8d4835",
+    "apple": "https://music.apple.com/us/song/requiem-for-tommorrow/1817096806"
    }, 
   {
     "img": "img/songs/dance_thorugh_the_darkness_piano.jpg",
     "title": "Dance through the Darkness (Piano version)",
-    "link": "https://open.spotify.com/track/5JOR9fbmiqMXhwds3bX9M7?si=f340e9739ee34990"
+    "spotify": "https://open.spotify.com/track/5JOR9fbmiqMXhwds3bX9M7?si=f340e9739ee34990",
+    "apple": "https://music.apple.com/us/song/dance-through-the-darkness-piano-version/1786985290"
   },
   {
     "img": "img/songs/dance_through_darkness.jpg",
     "title": "Dance through the Darkness",
-    "link": "https://open.spotify.com/track/56c36GTYATaQKKCNP4wlK5?si=5414728b91784336"
+    "spotify": "https://open.spotify.com/track/56c36GTYATaQKKCNP4wlK5?si=5414728b91784336",
+    "apple": "https://music.apple.com/us/song/dance-through-the-darkness/1780105170"
   },
   {
     "img": "img/songs/hail_to_mother.jpg",
     "title": "Hail to mother nature",
-    "link": "https://open.spotify.com/track/7fs5PWwkztqgip0IWKskjm?si=a78eb1aba5974c03"
+    "spotify": "https://open.spotify.com/track/7fs5PWwkztqgip0IWKskjm?si=a78eb1aba5974c03",
+    "apple": "https://music.apple.com/us/song/hail-to-mother-nature/1706458037"
   },
   {
     "img": "img/songs/dance_of_fantasy.jpg",
     "title": "Dance of Fantasy",
-    "link": "https://open.spotify.com/track/2c4Nd6u1todTNaU8lDzLNb?si=6198ff3b172f4a20"
+    "spotify": "https://open.spotify.com/track/2c4Nd6u1todTNaU8lDzLNb?si=6198ff3b172f4a20",
+    "apple": "https://music.apple.com/us/album/dance-of-fantasy-single/1705698895"
   },
   {
     "img": "img/songs/sorry.jpg",
     "title": "I am sorry for my heart",
-    "link": "https://open.spotify.com/track/7emwOnWoYdspeZI7XlMeXh?si=239f7059c4cb4453"
+    "spotify": "https://open.spotify.com/track/7emwOnWoYdspeZI7XlMeXh?si=239f7059c4cb4453",
+    "apple": "https://music.apple.com/us/album/i-am-sorry-for-my-heart-single/1693188550"
   }
 ]
