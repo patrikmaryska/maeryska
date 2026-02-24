@@ -115,8 +115,8 @@ const galleryImages = [
     "img/gallery/keys3.jpg",
     "img/gallery/keys8.jpg",
     "img/gallery/keys9.JPG",
-    "img/gallery/keys10.JPG",
-    "img/gallery/keys2.JPG",
+    "img/gallery/keys10.jpg",
+    "img/gallery/keys6.jpg",
      "img/gallery/keys5.JPG",
      "img/blogs/agony_zk_18012026.jpg",
 ];
