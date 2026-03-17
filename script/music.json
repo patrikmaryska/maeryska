@@ -1,5 +1,11 @@
 [
   {
+    "img": "img/songs/Ragnarok_unleashead.png",
+    "title": "Ragnarök Unleashed",
+    "spotify": "https://open.spotify.com/track/6w1nmoKMKy8Qj5pEzUibxN?si=8562efc267474816",
+    "apple": "https://music.apple.com/us/album/ragnar%C3%B6k-unleashed-single/1882522690"
+   },
+  {
     "img": "img/songs/before_the_silence.png",
     "title": "Before the Silence wins",
     "spotify": "https://open.spotify.com/track/494zqLWJ7DCr2UxLsl1beS?si=17fe5904d69842b1",
