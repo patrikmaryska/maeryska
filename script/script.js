@@ -1,3 +1,16 @@
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+
+function updateThemeIcon(icon, theme) {
+    if (theme === 'dark') {
+        icon.className = 'fa-solid fa-sun';
+        icon.nextElementSibling.textContent = 'Light Mode';
+    } else {
+        icon.className = 'fa-solid fa-moon';
+        icon.nextElementSibling.textContent = 'Dark Mode';
+    }
+}
+
 function onReady(fn) {
     if (document.readyState !== 'loading') fn();
     else document.addEventListener('DOMContentLoaded', fn);
@@ -154,6 +167,19 @@ function addPaginationHandlers() {
 }
 
 onReady(async () => {
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (toggleBtn) {
+        const icon = toggleBtn.querySelector('i');
+        updateThemeIcon(icon, savedTheme);
+        toggleBtn.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            updateThemeIcon(icon, next);
+        });
+    }
+
     addPaginationHandlers();
     renderGallery();
 
