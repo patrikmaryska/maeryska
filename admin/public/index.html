@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maeryska Admin</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="admin-header">
+        <div class="admin-logo">
+            <i class="fas fa-music"></i>
+            <span>Maeryska Admin</span>
+        </div>
+        <div id="toast" class="toast" hidden></div>
+    </header>
+
+    <nav class="tab-nav">
+        <button class="tab-btn active" data-tab="songs"><i class="fas fa-compact-disc"></i> Songs</button>
+        <button class="tab-btn" data-tab="news"><i class="fas fa-newspaper"></i> News</button>
+        <button class="tab-btn" data-tab="videos"><i class="fab fa-youtube"></i> Videos</button>
+    </nav>
+
+    <main class="admin-main">
+
+        <!-- ═══════════════ SONGS TAB ═══════════════ -->
+        <section id="tab-songs" class="tab-pane active">
+            <div class="pane-header">
+                <h2>Songs</h2>
+                <button class="btn btn-primary" onclick="openAddSong()"><i class="fas fa-plus"></i> Add Song</button>
+            </div>
+            <p class="hint"><i class="fas fa-star gold"></i> The first song is shown as the <strong>Featured</strong> release on the website. Use "Set as Featured" to promote any song.</p>
+            <div id="songs-list" class="item-list"></div>
+        </section>
+
+        <!-- ═══════════════ NEWS TAB ════════════════ -->
+        <section id="tab-news" class="tab-pane">
+            <div class="pane-header">
+                <h2>News</h2>
+                <button class="btn btn-primary" onclick="openAddNews()"><i class="fas fa-plus"></i> Add News</button>
+            </div>
+            <div id="news-list" class="item-list"></div>
+        </section>
+
+        <!-- ═══════════════ VIDEOS TAB ══════════════ -->
+        <section id="tab-videos" class="tab-pane">
+            <div class="pane-header">
+                <h2>Videos</h2>
+                <button class="btn btn-primary" onclick="openAddVideo()"><i class="fas fa-plus"></i> Add Video</button>
+            </div>
+            <div id="videos-list" class="item-list"></div>
+        </section>
+    </main>
+
+    <!-- ═══════════════ MODAL ════════════════════════ -->
+    <div id="modal-overlay" class="modal-overlay" hidden>
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Add</h3>
+                <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="modal-body" class="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- ═══════════════ CONFIRM ══════════════════════ -->
+    <div id="confirm-overlay" class="modal-overlay" hidden>
+        <div class="modal confirm-modal">
+            <p id="confirm-text">Are you sure?</p>
+            <div class="confirm-actions">
+                <button class="btn btn-danger" id="confirm-yes">Delete</button>
+                <button class="btn btn-ghost" onclick="closeConfirm()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
