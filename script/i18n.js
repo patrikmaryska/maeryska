@@ -16,6 +16,9 @@ const translations = {
         'about.quote.attribution': '— Marcus Aurelius',
         'music.heading': 'Music',
         'music.subtext': 'Listen to original compositions and performances by Maeryska.',
+        'nav.videos': 'Videos',
+        'videos.heading': 'Videos',
+        'videos.subtext': 'Watch performances and official releases.',
         'news.heading': 'Latest News',
         'news.subtext': 'Stay updated on new releases, concerts, and creative updates.',
         'gallery.heading': 'Gallery',
@@ -30,7 +33,7 @@ const translations = {
         'form.message.label': 'Message',
         'form.message.placeholder': 'Your Message',
         'form.submit': 'Send Message',
-        'footer.text': '© 2025 Maeryska. All Rights Reserved. Created by Maeryska',
+        'footer.text': `© ${new Date().getFullYear()} Maeryska. All Rights Reserved. Created by Maeryska`,
         'pagination.previous': 'Previous',
         'pagination.next': 'Next',
         'news.type.single': 'Single Release',
@@ -40,6 +43,12 @@ const translations = {
         'theme.dark': 'Dark Mode',
         'theme.light': 'Light Mode',
         'lang.toggle.arialabel': 'Switch to Czech',
+        'cookie.text': 'This site uses Google Analytics to understand visitor behaviour. Do you accept cookies?',
+        'cookie.accept': 'Accept',
+        'cookie.decline': 'Decline',
+        'featured.label': 'Latest Release',
+        'featured.spotify': 'Spotify',
+        'featured.apple': 'Apple Music',
     },
     cz: {
         'skip.link': 'Přejít na hlavní obsah',
@@ -58,6 +67,9 @@ const translations = {
         'about.quote.attribution': '— Marcus Aurelius',
         'music.heading': 'Hudba',
         'music.subtext': 'Poslouchejte originální kompozice a vystoupení Maerysky.',
+        'nav.videos': 'Videa',
+        'videos.heading': 'Videa',
+        'videos.subtext': 'Sledujte vystoupení a oficiální klipy.',
         'news.heading': 'Nejnovější zprávy',
         'news.subtext': 'Buďte v obraze ohledně nových vydání, koncertů a kreativních novinek.',
         'gallery.heading': 'Galerie',
@@ -72,7 +84,7 @@ const translations = {
         'form.message.label': 'Zpráva',
         'form.message.placeholder': 'Vaše zpráva',
         'form.submit': 'Odeslat zprávu',
-        'footer.text': '© 2025 Maeryska. Všechna práva vyhrazena. Vytvořil Maeryska',
+        'footer.text': `© ${new Date().getFullYear()} Maeryska. Všechna práva vyhrazena. Vytvořil Maeryska`,
         'pagination.previous': 'Předchozí',
         'pagination.next': 'Další',
         'news.type.single': 'Singl',
@@ -82,6 +94,12 @@ const translations = {
         'theme.dark': 'Tmavý režim',
         'theme.light': 'Světlý režim',
         'lang.toggle.arialabel': 'Přepnout do angličtiny',
+        'cookie.text': 'Tato stránka používá Google Analytics ke sledování návštěvnosti. Souhlasíte s použitím cookies?',
+        'cookie.accept': 'Přijmout',
+        'cookie.decline': 'Odmítnout',
+        'featured.label': 'Nejnovější vydání',
+        'featured.spotify': 'Spotify',
+        'featured.apple': 'Apple Music',
     }
 };
 
@@ -108,6 +126,7 @@ function setLanguage(lang) {
         el.placeholder = t(el.getAttribute('data-i18n-placeholder'));
     });
 
+    if (typeof renderFeatured === 'function') renderFeatured();
     if (typeof renderNews === 'function') renderNews();
     if (typeof renderSongs === 'function') renderSongs();
     if (typeof renderGallery === 'function') renderGallery();

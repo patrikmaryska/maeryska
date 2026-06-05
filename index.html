@@ -22,8 +22,8 @@
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {'analytics_storage': 'denied'});
     gtag('js', new Date());
-
     gtag('config', 'G-SRX0DYB5G7');
     </script>
     <script type="application/ld+json">
@@ -59,6 +59,7 @@
             <ul class="nav-menu">
                 <li><a href="#about" data-i18n="nav.about">About</a></li>
                 <li><a href="#music" data-i18n="nav.music">Music</a></li>
+                <li><a href="#videos" data-i18n="nav.videos">Videos</a></li>
                 <li><a href="#news" data-i18n="nav.news">News</a></li>
                 <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
                 <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
@@ -83,6 +84,19 @@
     </header>
 
    <main id="main-content">
+        <section id="featured" class="featured-section" aria-labelledby="featured-title">
+            <div class="container">
+                <p class="featured-label" data-i18n="featured.label">Latest Release</p>
+                <div class="featured-layout">
+                    <img id="featured-img" class="featured-art" src="" alt="">
+                    <div class="featured-info">
+                        <h2 id="featured-title" class="featured-song-title"></h2>
+                        <div id="featured-links" class="featured-links"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="about" class="section" aria-labelledby="about-heading">
             <div class="container about-container">
                 <div class="about-image">
@@ -121,6 +135,18 @@
                 <button id="next-button" data-i18n="pagination.next">Next</button>
             </div>
         </section>
+        <section id="videos" class="section" aria-labelledby="videos-heading">
+            <div class="container">
+                <h2 id="videos-heading" data-i18n="videos.heading">Videos</h2>
+                <p class="section-subtext" data-i18n="videos.subtext">Watch performances and official releases.</p>
+                <div id="video-grid" class="video-grid"></div>
+                <div class="pagination-controls">
+                    <button id="prev-video" disabled data-i18n="pagination.previous">Previous</button>
+                    <button id="next-video" data-i18n="pagination.next">Next</button>
+                </div>
+            </div>
+        </section>
+
         <section id="news" class="section news-section" aria-labelledby="news-heading">
             <div class="container">
                 <h2 id="news-heading" data-i18n="news.heading">Latest News</h2>
@@ -165,6 +191,25 @@
                 </form>
             </div>
         </section>
+
+    <div id="cookie-banner" class="cookie-banner" hidden>
+        <p data-i18n="cookie.text">This site uses Google Analytics to understand visitor behaviour. Do you accept cookies?</p>
+        <div class="cookie-actions">
+            <button id="cookie-accept" class="cookie-accept" data-i18n="cookie.accept">Accept</button>
+            <button id="cookie-decline" class="cookie-decline" data-i18n="cookie.decline">Decline</button>
+        </div>
+    </div>
+
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">&#x2715;</button>
+        <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#10094;</button>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="">
+        <button class="lightbox-next" id="lightbox-next" aria-label="Next image">&#10095;</button>
+    </div>
 
     </main>
 
