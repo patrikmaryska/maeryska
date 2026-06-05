@@ -140,8 +140,9 @@ function setLanguage(lang) {
 
     var langBtn = document.getElementById('lang-toggle');
     if (langBtn) {
-        langBtn.querySelector('.lang-flag').textContent = lang === 'cz' ? '🇬🇧' : '🇨🇿';
-        langBtn.querySelector('span:not(.lang-flag)').textContent = lang === 'cz' ? 'EN' : 'CZ';
+        var flagSpan = langBtn.querySelector('.lang-flag');
+        flagSpan.className = 'lang-flag fi ' + (lang === 'cz' ? 'fi-cz' : 'fi-gb');
+        langBtn.querySelector('.lang-text').textContent = lang === 'cz' ? 'Česky' : 'English';
         langBtn.setAttribute('aria-label', t('lang.toggle.arialabel'));
     }
 }

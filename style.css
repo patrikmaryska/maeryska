@@ -657,8 +657,10 @@ h2 {
 }
 
 .lang-flag {
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1;
+    border-radius: 2px;
+    overflow: hidden;
 }
 
 /* Video gallery */
@@ -990,4 +992,96 @@ h2 {
 .reveal.revealed {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ===== Animations ===== */
+
+/* Heading underline — structural (always present, instant fallback for reduced-motion) */
+.section h2 {
+    position: relative;
+    padding-bottom: 14px;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 0;
+    background: var(--accent);
+    border-radius: 1px;
+}
+
+.section h2.revealed::after {
+    width: 60px;
+}
+
+/* Form focus underline — structural (always present, instant fallback for reduced-motion) */
+.form-group {
+    position: relative;
+}
+
+.form-group::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: var(--accent);
+    border-radius: 1px;
+    pointer-events: none;
+}
+
+.form-group:focus-within::after {
+    width: 100%;
+}
+
+/* Animated versions — only when motion is OK */
+@media (prefers-reduced-motion: no-preference) {
+    @keyframes fadeSlideDown {
+        from { opacity: 0; transform: translateY(-18px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes floatBob {
+        0%, 100% { transform: translateY(0);     box-shadow: 0 16px 48px rgba(0,0,0,0.6); }
+        50%       { transform: translateY(-10px); box-shadow: 0 26px 56px rgba(0,0,0,0.45); }
+    }
+
+    @keyframes underlineGrow {
+        from { width: 0; }
+        to   { width: 60px; }
+    }
+
+    /* 1. Page load entrance cascade */
+    .branding h1                { animation: fadeSlideDown 0.6s ease 0s    both; }
+    .branding .title            { animation: fadeSlideDown 0.6s ease 0.15s both; }
+    .branding .subtitle         { animation: fadeSlideDown 0.6s ease 0.28s both; }
+    .nav-menu li:nth-child(1)   { animation: fadeSlideDown 0.5s ease 0.40s both; }
+    .nav-menu li:nth-child(2)   { animation: fadeSlideDown 0.5s ease 0.47s both; }
+    .nav-menu li:nth-child(3)   { animation: fadeSlideDown 0.5s ease 0.54s both; }
+    .nav-menu li:nth-child(4)   { animation: fadeSlideDown 0.5s ease 0.61s both; }
+    .nav-menu li:nth-child(5)   { animation: fadeSlideDown 0.5s ease 0.68s both; }
+    .nav-menu li:nth-child(6)   { animation: fadeSlideDown 0.5s ease 0.75s both; }
+    .social-icons               { animation: fadeSlideDown 0.5s ease 0.82s both; }
+    #theme-toggle               { animation: fadeSlideDown 0.5s ease 0.90s both; }
+    #lang-toggle                { animation: fadeSlideDown 0.5s ease 0.96s both; }
+
+    /* 2. Featured album art float */
+    .featured-art {
+        animation: floatBob 4s ease-in-out infinite;
+    }
+
+    /* 3. Section heading underline animates on scroll-reveal */
+    .section h2.revealed::after {
+        animation: underlineGrow 0.5s ease 0.3s forwards;
+    }
+
+    /* 4. Contact form focus underline sweeps in */
+    .form-group::after {
+        transition: width 0.4s ease;
+    }
 }

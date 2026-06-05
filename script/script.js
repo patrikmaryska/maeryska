@@ -334,7 +334,9 @@ onReady(async () => {
     }
 
     document.querySelectorAll(
+        '#about h2, ' +
         '#music h2, #music .section-subtext, ' +
+        '#videos h2, #videos .section-subtext, ' +
         '#news h2, #news .section-subtext, ' +
         '#gallery h2, #gallery .section-subtext, ' +
         '#contact h2, #contact .section-subtext, ' +
