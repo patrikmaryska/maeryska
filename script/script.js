@@ -1,6 +1,20 @@
 const savedTheme = localStorage.getItem('theme') || 'light';
 document.documentElement.setAttribute('data-theme', savedTheme);
 
+(function () {
+    var h1 = document.querySelector('.branding h1');
+    if (!h1) return;
+    var text = h1.textContent;
+    h1.textContent = '';
+    text.split('').forEach(function (char, i) {
+        var span = document.createElement('span');
+        span.className = 'letter';
+        span.textContent = char === ' ' ? ' ' : char;
+        span.style.animationDelay = (i * 0.055) + 's';
+        h1.appendChild(span);
+    });
+}());
+
 const revealObserver = typeof IntersectionObserver !== 'undefined'
     ? new IntersectionObserver(entries => {
         entries.forEach(entry => {

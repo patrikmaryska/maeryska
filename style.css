@@ -1057,9 +1057,15 @@ h2 {
     }
 
     /* 1. Page load entrance cascade */
-    .branding h1                { animation: fadeSlideDown 0.6s ease 0s    both; }
-    .branding .title            { animation: fadeSlideDown 0.6s ease 0.15s both; }
-    .branding .subtitle         { animation: fadeSlideDown 0.6s ease 0.28s both; }
+    @keyframes letterReveal {
+        from { opacity: 0; transform: translateY(14px); filter: blur(6px); }
+        to   { opacity: 1; transform: translateY(0);    filter: blur(0); }
+    }
+
+    .branding h1                { animation: none; }
+    .branding h1 .letter        { display: inline-block; animation: letterReveal 0.5s cubic-bezier(0.2, 0.8, 0.4, 1) both; }
+    .branding .title            { animation: fadeSlideDown 0.6s ease 0.55s both; }
+    .branding .subtitle         { animation: fadeSlideDown 0.6s ease 0.72s both; }
     .nav-menu li:nth-child(1)   { animation: fadeSlideDown 0.5s ease 0.40s both; }
     .nav-menu li:nth-child(2)   { animation: fadeSlideDown 0.5s ease 0.47s both; }
     .nav-menu li:nth-child(3)   { animation: fadeSlideDown 0.5s ease 0.54s both; }
