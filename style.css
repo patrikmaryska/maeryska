@@ -626,7 +626,8 @@ h2 {
     vertical-align: middle;
 }
 
-#theme-toggle {
+#theme-toggle,
+#lang-toggle {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -644,7 +645,8 @@ h2 {
     white-space: nowrap;
 }
 
-#theme-toggle:hover {
+#theme-toggle:hover,
+#lang-toggle:hover {
     background-color: var(--accent);
     color: #1a1a1a;
     transform: scale(1.05);
@@ -652,4 +654,9 @@ h2 {
 
 #theme-toggle i {
     font-size: 1rem;
+}
+
+.lang-flag {
+    font-size: 1.2rem;
+    line-height: 1;
 }

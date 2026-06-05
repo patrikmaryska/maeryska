@@ -46,39 +46,42 @@
     </script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link" data-i18n="skip.link">Skip to main content</a>
     <header>
         <div class="container nav-container">
             <div class="branding">
                 <h1>Maeryska</h1>
-                <p class="title">Music Composer & Pianist</p>
-                <p class="subtitle">Software Engineer</p>
+                <p class="title" data-i18n="branding.title">Music Composer &amp; Pianist</p>
+                <p class="subtitle" data-i18n="branding.subtitle">Software Engineer</p>
             </div>
         </div>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#music">Music</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="social-icons">
-                <a href="https://open.spotify.com/artist/7lLSJbc4l55HrLjrrohqwg?si=Giz0jhEiTWK0_mtXkvPodw" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-                <a href="https://music.apple.com/us/artist/maeryska/1693151070" target="_blank" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=100089970107655" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/maeryska/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/@maeryska-music" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.linkedin.com/in/patrikmaryska/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            </div>
-            <button id="theme-toggle" aria-label="Toggle theme">
-                <i class="fa-solid fa-moon"></i>
-                <span>Dark Mode</span>
-            </button>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#music" data-i18n="nav.music">Music</a></li>
+                <li><a href="#news" data-i18n="nav.news">News</a></li>
+                <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="https://open.spotify.com/artist/7lLSJbc4l55HrLjrrohqwg?si=Giz0jhEiTWK0_mtXkvPodw" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+            <a href="https://music.apple.com/us/artist/maeryska/1693151070" target="_blank" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100089970107655" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/maeryska/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@maeryska-music" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/in/patrikmaryska/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
+        <button id="theme-toggle" aria-label="Toggle theme">
+            <i class="fa-solid fa-moon"></i>
+            <span>Dark Mode</span>
+        </button>
+        <button id="lang-toggle" aria-label="Switch to Czech">
+            <span class="lang-flag">🇨🇿</span>
+            <span>CZ</span>
+        </button>
     </header>
-    
+
    <main id="main-content">
         <section id="about" class="section" aria-labelledby="about-heading">
             <div class="container about-container">
@@ -86,79 +89,79 @@
                     <img src="img/header.jpg" alt="Portrait of Maeryska, composer and pianist">
                 </div>
                 <div class="about-text">
-                    <h2 id="about-heading">Meet Maeryska</h2>
+                    <h2 id="about-heading" data-i18n="about.heading">Meet Maeryska</h2>
                     <p>
                         <i class="fas fa-music about-icon" aria-hidden="true"></i>
-                        Maeryska is a pianist turned musical storyteller, whose journey began at sixteen with his first band, <em>Phoenix in Fire</em>. Since then, he has performed with multiple bands and explored a wide range of genres—from orchestral fantasy to cinematic soundscapes—all shaped by his deep emotional range and love for narrative-driven music.
+                        <span data-i18n-html="about.p1">Maeryska is a pianist turned musical storyteller, whose journey began at sixteen with his first band, <em>Phoenix in Fire</em>. Since then, he has performed with multiple bands and explored a wide range of genres—from orchestral fantasy to cinematic soundscapes—all shaped by his deep emotional range and love for narrative-driven music.</span>
                     </p>
                     <p>
                         <i class="fas fa-palette about-icon" aria-hidden="true"></i>
-                        Maeryska crafts sound like a painter with light—his hands fluent in piano, keyboards, and wind-carved flutes. Each composition emerges from the marrow of real moments, then drifts into realms of myth and wonder, where emotion swells and reason quietly shapes the storm.
+                        <span data-i18n="about.p2">Maeryska crafts sound like a painter with light—his hands fluent in piano, keyboards, and wind-carved flutes. Each composition emerges from the marrow of real moments, then drifts into realms of myth and wonder, where emotion swells and reason quietly shapes the storm.</span>
                     </p>
                     <p>
                         <i class="fas fa-star about-icon" aria-hidden="true"></i>
-                        With a Master’s degree in Software Engineering, he seamlessly blends the logic of technology with the chaos of creativity. Maeryska completely mixes and masters his music, maintaining full artistic control from conception to final production.
+                        <span data-i18n="about.p3">With a Master's degree in Software Engineering, he seamlessly blends the logic of technology with the chaos of creativity. Maeryska completely mixes and masters his music, maintaining full artistic control from conception to final production.</span>
                     </p>
-                     <blockquote class="about-quote">
-                    “Dwell on the beauty of life. Watch the stars, and see yourself running with them.”
-                    <footer>— Marcus Aurelius</footer>
-                </blockquote>
+                    <blockquote class="about-quote">
+                        <span data-i18n="about.quote">"Dwell on the beauty of life. Watch the stars, and see yourself running with them."</span>
+                        <footer><span data-i18n="about.quote.attribution">— Marcus Aurelius</span></footer>
+                    </blockquote>
                 </div>
             </div>
         </section>
 
         <section id="music" class="section music-section" aria-labelledby="music-heading">
-            <h2 id="music-heading">Music</h2>
-            <p class="section-subtext">Listen to original compositions and performances by Maeryska.</p>
+            <h2 id="music-heading" data-i18n="music.heading">Music</h2>
+            <p class="section-subtext" data-i18n="music.subtext">Listen to original compositions and performances by Maeryska.</p>
             <div id="music-pagination" class="music-grid">
                 <!-- dynamically generated music items will appear here -->
             </div>
             <div class="pagination-controls">
-                <button id="prev-button">Previous</button>
-                <button id="next-button">Next</button>
+                <button id="prev-button" data-i18n="pagination.previous">Previous</button>
+                <button id="next-button" data-i18n="pagination.next">Next</button>
             </div>
         </section>
         <section id="news" class="section news-section" aria-labelledby="news-heading">
             <div class="container">
-                <h2 id="news-heading">Latest News</h2>
-                <p class="section-subtext">Stay updated on new releases, concerts, and creative updates.</p>
+                <h2 id="news-heading" data-i18n="news.heading">Latest News</h2>
+                <p class="section-subtext" data-i18n="news.subtext">Stay updated on new releases, concerts, and creative updates.</p>
                 <div id="news-feed" class="news-grid"></div>
                 <div class="pagination-controls">
-                    <button id="prev-news" disabled>Previous</button>
-                    <button id="next-news">Next</button>
+                    <button id="prev-news" disabled data-i18n="pagination.previous">Previous</button>
+                    <button id="next-news" data-i18n="pagination.next">Next</button>
                 </div>
             </div>
         </section>
         <section id="gallery" class="section" aria-labelledby="gallery-heading">
             <div class="container">
-                <h2 id="gallery-heading">Gallery</h2>
-                <p class="section-subtext">Snapshots of inspiration, performance, and behind-the-scenes magic.</p>
+                <h2 id="gallery-heading" data-i18n="gallery.heading">Gallery</h2>
+                <p class="section-subtext" data-i18n="gallery.subtext">Snapshots of inspiration, performance, and behind-the-scenes magic.</p>
                 <div id="gallery-grid" class="gallery-grid"></div>
                 <div class="pagination-controls">
-                    <button id="prev-gallery">Previous</button>
-                    <button id="next-gallery">Next</button>
+                    <button id="prev-gallery" data-i18n="pagination.previous">Previous</button>
+                    <button id="next-gallery" data-i18n="pagination.next">Next</button>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="section" aria-labelledby="contact-heading">
             <div class="container">
-                <h2 id="contact-heading">Contact</h2>
-                <p class="section-subtext">Let’s connect — for collaborations, inquiries, or just to say hello.</p>
+                <h2 id="contact-heading" data-i18n="contact.heading">Contact</h2>
+                <p class="section-subtext" data-i18n="contact.subtext">Let's connect — for collaborations, inquiries, or just to say hello.</p>
                 <form action="https://formsubmit.co/maeryskamusic@gmail.com" method="POST">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input id="name" type="text" name="name" placeholder="Your Name" required>
+                        <label for="name" data-i18n="form.name.label">Name</label>
+                        <input id="name" type="text" name="name" placeholder="Your Name" data-i18n-placeholder="form.name.placeholder" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input id="email" type="email" name="email" placeholder="Your Email" required>
+                        <label for="email" data-i18n="form.email.label">Email</label>
+                        <input id="email" type="email" name="email" placeholder="Your Email" data-i18n-placeholder="form.email.placeholder" required>
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <label for="message" data-i18n="form.message.label">Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message" data-i18n-placeholder="form.message.placeholder" rows="5" required></textarea>
                     </div>
-                    <button type="submit">Send Message</button>
+                    <button type="submit" data-i18n="form.submit">Send Message</button>
                 </form>
             </div>
         </section>
@@ -167,11 +170,11 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Maeryska. All Rights Reserved. Created by Maeryska</p>
+            <p data-i18n="footer.text">© 2025 Maeryska. All Rights Reserved. Created by Maeryska</p>
         </div>
     </footer>
-</body>
 
+<script src="script/i18n.js" defer></script>
 <script src="script/script.js" defer></script>
 
 </html>

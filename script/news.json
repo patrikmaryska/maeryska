@@ -1,7 +1,9 @@
 [
   {
     "title": "New song released - Ragnarök Unleashed",
+    "title_cz": "Nová píseň - Ragnarök Unleashed",
     "content": "A heavy, atmospheric piece capturing the chaos of Ragnarok—roaring flames consuming the skies, realms shattering beneath the weight of fate, and thunder rolling like the footsteps of dying gods. Dark, layered soundscapes build a sense of inevitable collapse. ",
+    "content_cz": "Těžká, atmosférická skladba zachycující chaos Ragnaröku — řvoucí plameny pohlcující nebe, říše se drtící pod tíhou osudu a hrom dunící jako kroky umírajících bohů. Temné, vícevrstvé zvukové krajiny budují pocit nevyhnutelného kolapsu.",
     "date": "2026-03-22",
     "type": "Single Release",
     "links": {
@@ -12,7 +14,9 @@
   },
   {
     "title": "New song released - Before the Silence wins",
+    "title_cz": "Nová píseň - Before the Silence wins",
     "content": "A powerful ballad about defiance in the face of the inevitable. This composition captures the essence of human resilience—standing unwavering as silence creeps closer. When everything seems destined to fade, we choose to fight, to resist, and to remain standing.",
+    "content_cz": "Silná balada o vzdoru tváří v tvář nevyhnutelnému. Tato kompozice zachycuje podstatu lidské odolnosti — stát pevně, jak se ticho plíží blíže. Když se zdá, že vše je odsouzeno k zániku, rozhodujeme se bojovat, odolávat a zůstat stát.",
     "date": "2026-02-12",
     "type": "Single Release",
     "links": {
@@ -23,14 +27,18 @@
   },
   {
     "title": "Call the rain - behind the scenes",
+    "title_cz": "Call the rain - zákulisí",
     "content": "A glimpse into the Agony this weekend",
+    "content_cz": "Pohled za oponu na Agony tento víkend",
     "date": "2026-01-18",
     "type": "Blog",
     "img": "img/blogs/agony_zk_18012026.jpg"
   },
   {
     "title": "New song released - Requeim for Tomorrow",
+    "title_cz": "Nová píseň - Requiem for Tomorrow",
     "content": "Thou shalt, in truth, know the pain.",
+    "content_cz": "Ty skutečně poznáš bolest.",
     "date": "2025-06-16",
     "type": "Single Release",
     "links": {
@@ -41,7 +49,9 @@
   },
   {
     "title": "New song released - Dance through the Darkness (piano version)",
+    "title_cz": "Nová píseň - Dance through the Darkness (piano verze)",
     "content": "The song about fighting everything wrong in possitive thinking. We can do it! And now in pure piano version it out..",
+    "content_cz": "Píseň o boji se vším špatným v pozitivním myšlení. Dokážeme to! A nyní je venku v čistě klavírní verzi.",
     "date": "2025-02-10",
     "type": "Single Release",
     "links": {
@@ -52,7 +62,9 @@
   },
   {
     "title": "New song released - Dance through the Darkness",
+    "title_cz": "Nová píseň - Dance through the Darkness",
     "content": "The song about fighting everything wrong in possitive thinking. We can do it!",
+    "content_cz": "Píseň o boji se vším špatným v pozitivním myšlení. Dokážeme to!",
     "date": "2025-02-01",
     "type": "Single Release",
     "links": {
@@ -63,7 +75,9 @@
   },
   {
     "title": "New song released - Hail to Mother Nature",
+    "title_cz": "Nová píseň - Hail to Mother Nature",
     "content": "The song and the tribute to our beloved Mother Nature.",
+    "content_cz": "Píseň a hold naší milované Matce přírodě.",
     "date": "2024-04-01",
     "type": "Single Release",
     "links": {
@@ -74,7 +88,9 @@
   },
   {
     "title": "New song released - Dance of Fantasy feat. Hana Adámková",
+    "title_cz": "Nová píseň - Dance of Fantasy feat. Hana Adámková",
     "content": "Who does not like to fantasy",
+    "content_cz": "Kdo si nerád fantazíruje",
     "date": "2023-04-01",
     "type": "Single Release",
     "links": {
@@ -85,7 +101,9 @@
   },
   {
     "title": "Behind the Scenes: Studio Diary",
-    "content": "A glimpse into the creative process of Maeryska’s latest compositions.",
+    "title_cz": "Zákulisí: Studiový deník",
+    "content": "A glimpse into the creative process of Maeryska's latest compositions.",
+    "content_cz": "Pohled do tvůrčího procesu nejnovějších kompozic Maerysky.",
     "date": "2025-05-25",
     "type": "Blog",
     "links": {
@@ -94,13 +112,17 @@
   },
   {
     "title": "Fan Club Update",
+    "title_cz": "Aktualizace fanklubu",
     "content": "Working on a new song called River of time!",
+    "content_cz": "Pracuji na nové písni s názvem River of time!",
     "date": "2025-05-20",
     "type": "Information"
-  }, 
+  },
   {
     "title": "Concert in MC Fabrika, České Budějovice",
+    "title_cz": "Koncert v MC Fabrika, České Budějovice",
     "content": "New concert at MC Fabrika in České Budějovice!",
+    "content_cz": "Nový koncert v MC Fabrice v Českých Budějovicích!",
     "date": "2025-05-20",
     "type": "Concert"
   }

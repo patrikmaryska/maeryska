@@ -4,10 +4,10 @@ document.documentElement.setAttribute('data-theme', savedTheme);
 function updateThemeIcon(icon, theme) {
     if (theme === 'dark') {
         icon.className = 'fa-solid fa-sun';
-        icon.nextElementSibling.textContent = 'Light Mode';
+        icon.nextElementSibling.textContent = typeof t === 'function' ? t('theme.light') : 'Light Mode';
     } else {
         icon.className = 'fa-solid fa-moon';
-        icon.nextElementSibling.textContent = 'Dark Mode';
+        icon.nextElementSibling.textContent = typeof t === 'function' ? t('theme.dark') : 'Dark Mode';
     }
 }
 
@@ -65,18 +65,29 @@ const typeIconMap = {
     'Information': { icon: 'fa-info-circle', color: '#6c757d' }
 };
 
+const typeI18nKey = {
+    'Single Release': 'news.type.single',
+    'Blog': 'news.type.blog',
+    'Concert': 'news.type.concert',
+    'Information': 'news.type.information',
+};
+
 function renderNews() {
     const container = document.getElementById('news-feed');
     container.innerHTML = '';
     const pageNews = paginate(newsItems, newsPage, newsPerPage);
 
+    const lang = document.documentElement.getAttribute('data-lang') || 'en';
+    const locale = lang === 'cz' ? 'cs-CZ' : 'en-GB';
+
     pageNews.forEach(item => {
         const type = item.type || 'Information';
         const { icon, color } = typeIconMap[type] || typeIconMap['Information'];
+        const typeLabel = typeof t === 'function' ? t(typeI18nKey[type] || 'news.type.information') : type;
         const typeHtml = `
             <div class="news-type" style="--type-color: ${color}">
                 <i class="fas ${icon}"></i>
-                <span>${type}</span>
+                <span>${typeLabel}</span>
             </div>
         `;
 
@@ -104,13 +115,16 @@ function renderNews() {
             </div>
         ` : '';
 
+    const title = (lang === 'cz' && item.title_cz) ? item.title_cz : item.title;
+    const content = (lang === 'cz' && item.content_cz) ? item.content_cz : item.content;
+
     const card = document.createElement('div');
     card.className = 'news-card';
     card.innerHTML = `
         ${typeHtml}
-        <div class="news-date">${new Date(item.date).toLocaleDateString()}</div>
-        <h3>${item.title}</h3>
-        <p>${item.content}</p>
+        <div class="news-date">${new Date(item.date).toLocaleDateString(locale)}</div>
+        <h3>${title}</h3>
+        <p>${content}</p>
         ${item.img ? `<img src="${item.img}" alt="${item.title}" class="news-img">` : ''}
         ${youtubeEmbed}
         ${linksHtml}
@@ -144,7 +158,7 @@ function renderGallery() {
     pageImages.forEach(src => {
         const img = document.createElement('img');
         img.src = src;
-        img.alt = "Gallery image";
+        img.alt = typeof t === 'function' ? t('gallery.img.alt') : 'Gallery image';
         galleryGrid.appendChild(img);
     });
 
@@ -177,6 +191,15 @@ onReady(async () => {
             document.documentElement.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
             updateThemeIcon(icon, next);
+        });
+    }
+
+    const langBtn = document.getElementById('lang-toggle');
+    if (langBtn) {
+        langBtn.addEventListener('click', () => {
+            const next = (document.documentElement.getAttribute('data-lang') || 'en') === 'en' ? 'cz' : 'en';
+            localStorage.setItem('lang', next);
+            setLanguage(next);
         });
     }
 
