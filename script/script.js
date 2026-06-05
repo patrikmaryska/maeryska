@@ -15,6 +15,85 @@ document.documentElement.setAttribute('data-theme', savedTheme);
     });
 }());
 
+(function () {
+    var header = document.querySelector('header');
+    if (!header) return;
+
+    var canvas = document.createElement('canvas');
+    canvas.id = 'piano-bg';
+    canvas.setAttribute('aria-hidden', 'true');
+    canvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;';
+    header.insertBefore(canvas, header.firstChild);
+
+    var ctx = canvas.getContext('2d');
+    var KW = 34;                           // white key width px
+    var BKW = 20;                          // black key width px
+    var BKX = [24, 58, 126, 160, 194];     // black key x within octave (centered)
+    var OCTAVE = 7 * KW;                   // 238px per octave
+    var drift = 0;
+
+    function resize() {
+        canvas.width  = header.offsetWidth;
+        canvas.height = header.offsetHeight;
+    }
+
+    function draw() {
+        var cw = canvas.width, ch = canvas.height;
+        var wkH = Math.min(ch * 0.72, 160);
+        var bkH = wkH * 0.6;
+        var top = ch - wkH;
+        var num = Math.ceil(cw / OCTAVE) + 3;
+
+        ctx.clearRect(0, 0, cw, ch);
+
+        for (var o = -2; o < num; o++) {
+            var ox = drift + o * OCTAVE;
+
+            // White keys
+            for (var k = 0; k < 7; k++) {
+                var x = ox + k * KW;
+                var g = ctx.createLinearGradient(0, top, 0, top + wkH);
+                g.addColorStop(0,    'rgba(255,228,140,0.00)');
+                g.addColorStop(0.12, 'rgba(255,228,140,0.14)');
+                g.addColorStop(1,    'rgba(255,200,60,0.10)');
+                ctx.fillStyle = g;
+                ctx.fillRect(x + 1, top, KW - 2, wkH);
+                ctx.strokeStyle = 'rgba(255,215,0,0.07)';
+                ctx.lineWidth = 1;
+                ctx.strokeRect(x + 1, top, KW - 2, wkH);
+            }
+
+            // Black keys
+            for (var b = 0; b < BKX.length; b++) {
+                var bx = ox + BKX[b];
+                var g2 = ctx.createLinearGradient(0, top, 0, top + bkH);
+                g2.addColorStop(0, 'rgba(8,6,0,0.82)');
+                g2.addColorStop(1, 'rgba(8,6,0,0.50)');
+                ctx.fillStyle = g2;
+                ctx.fillRect(bx, top, BKW, bkH);
+            }
+        }
+    }
+
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function tick() {
+        drift -= 0.22;
+        if (drift <= -OCTAVE) drift += OCTAVE;
+        draw();
+        requestAnimationFrame(tick);
+    }
+
+    resize();
+    window.addEventListener('resize', function () { resize(); draw(); }, { passive: true });
+
+    if (reducedMotion) {
+        draw();
+    } else {
+        requestAnimationFrame(tick);
+    }
+}());
+
 const revealObserver = typeof IntersectionObserver !== 'undefined'
     ? new IntersectionObserver(entries => {
         entries.forEach(entry => {
