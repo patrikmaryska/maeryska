@@ -189,18 +189,29 @@ form textarea {
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-form button {
-    background-color: var(--btn-bg);
-    color: var(--header-text);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+form button[type="submit"] {
+    background: var(--accent);
+    color: #1a1a1a;
+    border: 2px solid var(--accent);
+    padding: 12px 40px;
+    border-radius: 25px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.4, 1);
 }
 
-form button:hover {
-    background-color: var(--btn-hover-bg);
+form button[type="submit"]:hover {
+    background: transparent;
+    color: var(--accent);
+    box-shadow: 0 0 24px rgba(255, 215, 0, 0.4);
+    transform: scale(1.03);
 }
 
 footer {
@@ -229,23 +240,56 @@ footer {
 
 .pagination-controls {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
 }
 
 .pagination-controls button {
-    background-color: var(--btn-bg);
-    color: var(--header-text);
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 10px 22px;
+    border-radius: 25px;
     cursor: pointer;
-    margin: 0 5px;
-    transition: background-color 0.3s ease;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.pagination-controls button::before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.18), transparent);
+    transition: left 0.5s ease;
+    pointer-events: none;
+}
+
+.pagination-controls button:hover:not(:disabled)::before {
+    left: 160%;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: scale(1.06);
+    box-shadow: 0 0 18px rgba(255, 215, 0, 0.25);
 }
 
 .pagination-controls button:disabled {
-    background-color: var(--btn-disabled-bg);
-    cursor: not-allowed;
+    opacity: 0.25;
+    pointer-events: none;
 }
 
 .social-icons {
