@@ -49,6 +49,11 @@ const translations = {
         'featured.label': 'Latest Release',
         'featured.spotify': 'Spotify',
         'featured.apple': 'Apple Music',
+        'stats.years': 'Years of Music',
+        'stats.releases': 'Original Releases',
+        'stats.platforms': 'Streaming Platforms',
+        'stats.countries': 'Countries',
+        'filter.all': 'All',
     },
     cz: {
         'skip.link': 'Přejít na hlavní obsah',
@@ -100,6 +105,11 @@ const translations = {
         'featured.label': 'Nejnovější vydání',
         'featured.spotify': 'Spotify',
         'featured.apple': 'Apple Music',
+        'stats.years': 'Let hudby',
+        'stats.releases': 'Originálních vydání',
+        'stats.platforms': 'Streamovacích platforem',
+        'stats.countries': 'Zemí',
+        'filter.all': 'Vše',
     }
 };
 

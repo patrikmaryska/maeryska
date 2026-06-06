@@ -47,6 +47,11 @@
     </script>
 </head>
 <body>
+    <div id="preloader" aria-hidden="true">
+        <canvas id="preloader-canvas"></canvas>
+        <div class="preloader-brand">Maeryska</div>
+    </div>
+    <div id="scroll-progress" aria-hidden="true"></div>
     <a href="#main-content" class="skip-link" data-i18n="skip.link">Skip to main content</a>
     <header>
         <div class="container nav-container">
@@ -57,6 +62,9 @@
             </div>
         </div>
         <nav>
+            <button id="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
             <ul class="nav-menu">
                 <li><a href="#about" data-i18n="nav.about">About</a></li>
                 <li><a href="#music" data-i18n="nav.music">Music</a></li>
@@ -125,9 +133,38 @@
             </div>
         </section>
 
+        <section id="stats" class="stats-section" aria-label="Highlights">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="3">0</span>
+                    <span class="stat-label" data-i18n="stats.years">Years of Music</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="8">0</span>
+                    <span class="stat-label" data-i18n="stats.releases">Original Releases</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label" data-i18n="stats.platforms">Streaming Platforms</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="3">0</span>
+                    <span class="stat-label" data-i18n="stats.countries">Countries</span>
+                </div>
+            </div>
+        </section>
+
         <section id="music" class="section music-section" aria-labelledby="music-heading">
             <h2 id="music-heading" data-i18n="music.heading">Music</h2>
             <p class="section-subtext" data-i18n="music.subtext">Listen to original compositions and performances by Maeryska.</p>
+            <div id="music-filter" class="music-filter" role="group" aria-label="Filter by genre">
+                <button class="filter-btn active" data-genre="all" data-i18n="filter.all">All</button>
+                <button class="filter-btn" data-genre="Orchestral">Orchestral</button>
+                <button class="filter-btn" data-genre="Cinematic">Cinematic</button>
+                <button class="filter-btn" data-genre="Piano">Piano</button>
+                <button class="filter-btn" data-genre="Fantasy">Fantasy</button>
+                <button class="filter-btn" data-genre="Emotional">Emotional</button>
+            </div>
             <div id="music-pagination" class="music-grid">
                 <!-- dynamically generated music items will appear here -->
             </div>
@@ -219,6 +256,8 @@
             <p data-i18n="footer.text">© 2025 Maeryska. All Rights Reserved. Created by Maeryska</p>
         </div>
     </footer>
+
+    <div id="custom-cursor" aria-hidden="true">♪</div>
 
 <script src="script/i18n.js" defer></script>
 <script src="script/script.js" defer></script>

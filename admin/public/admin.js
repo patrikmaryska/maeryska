@@ -153,6 +153,10 @@ function songForm(s) {
             </div>
         </div>
         <div class="form-row">
+            <label>Tags <span style="color:var(--muted);font-weight:400">(comma-separated: Orchestral, Cinematic, Piano…)</span></label>
+            <input name="tags" type="text" value="${esc((s?.tags || []).join(', '))}" placeholder="Orchestral, Cinematic, ...">
+        </div>
+        <div class="form-row">
             <label>Album Art</label>
             <input name="img" id="song-img" type="file" accept="image/*">
             <div class="img-preview-wrap">
