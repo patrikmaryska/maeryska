@@ -159,11 +159,11 @@
             <p class="section-subtext" data-i18n="music.subtext">Listen to original compositions and performances by Maeryska.</p>
             <div id="music-filter" class="music-filter" role="group" aria-label="Filter by genre">
                 <button class="filter-btn active" data-genre="all" data-i18n="filter.all">All</button>
-                <button class="filter-btn" data-genre="Orchestral">Orchestral</button>
-                <button class="filter-btn" data-genre="Cinematic">Cinematic</button>
-                <button class="filter-btn" data-genre="Piano">Piano</button>
-                <button class="filter-btn" data-genre="Fantasy">Fantasy</button>
-                <button class="filter-btn" data-genre="Emotional">Emotional</button>
+                <button class="filter-btn" data-genre="Orchestral" data-i18n="filter.orchestral">Orchestral</button>
+                <button class="filter-btn" data-genre="Cinematic" data-i18n="filter.cinematic">Cinematic</button>
+                <button class="filter-btn" data-genre="Piano" data-i18n="filter.piano">Piano</button>
+                <button class="filter-btn" data-genre="Fantasy" data-i18n="filter.fantasy">Fantasy</button>
+                <button class="filter-btn" data-genre="Emotional" data-i18n="filter.emotional">Emotional</button>
             </div>
             <div id="music-pagination" class="music-grid">
                 <!-- dynamically generated music items will appear here -->
@@ -212,7 +212,7 @@
             <div class="container">
                 <h2 id="contact-heading" data-i18n="contact.heading">Contact</h2>
                 <p class="section-subtext" data-i18n="contact.subtext">Let's connect — for collaborations, inquiries, or just to say hello.</p>
-                <form action="https://formsubmit.co/maeryskamusic@gmail.com" method="POST">
+                <form id="contact-form">
                     <div class="form-group">
                         <label for="name" data-i18n="form.name.label">Name</label>
                         <input id="name" type="text" name="name" placeholder="Your Name" data-i18n-placeholder="form.name.placeholder" required>
@@ -227,6 +227,7 @@
                     </div>
                     <button type="submit" data-i18n="form.submit"><i class="fas fa-paper-plane"></i> Send Message</button>
                 </form>
+                <div id="form-status" class="form-status" aria-live="polite"></div>
             </div>
         </section>
 
@@ -259,7 +260,9 @@
 
     <div id="custom-cursor" aria-hidden="true">♪</div>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="script/i18n.js" defer></script>
 <script src="script/script.js" defer></script>
+<script src="script/contact.js" defer></script>
 
 </html>

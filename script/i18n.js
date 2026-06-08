@@ -53,7 +53,14 @@ const translations = {
         'stats.releases': 'Original Releases',
         'stats.platforms': 'Streaming Platforms',
         'stats.countries': 'Countries',
+        'form.success': "Message sent! I'll get back to you soon.",
+        'form.error': 'Something went wrong. Please try again or email directly.',
         'filter.all': 'All',
+        'filter.orchestral': 'Orchestral',
+        'filter.cinematic': 'Cinematic',
+        'filter.piano': 'Piano',
+        'filter.fantasy': 'Fantasy',
+        'filter.emotional': 'Emotional',
     },
     cz: {
         'skip.link': 'Přejít na hlavní obsah',
@@ -109,7 +116,14 @@ const translations = {
         'stats.releases': 'Originálních vydání',
         'stats.platforms': 'Streamovacích platforem',
         'stats.countries': 'Zemí',
+        'form.success': 'Zpráva odeslána! Brzy se ozvu.',
+        'form.error': 'Něco se pokazilo. Zkuste to znovu nebo napište přímo.',
         'filter.all': 'Vše',
+        'filter.orchestral': 'Orchestrální',
+        'filter.cinematic': 'Filmová',
+        'filter.piano': 'Klavírní',
+        'filter.fantasy': 'Fantasy',
+        'filter.emotional': 'Emotivní',
     }
 };
 

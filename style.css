@@ -675,6 +675,28 @@ h2 {
     font-weight: bold;
 }
 
+.form-status {
+    display: none;
+    margin-top: 12px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.form-status.form-success {
+    display: block;
+    background: rgba(100, 200, 100, 0.12);
+    color: #4caf50;
+    border: 1px solid rgba(100, 200, 100, 0.3);
+}
+
+.form-status.form-error {
+    display: block;
+    background: rgba(220, 50, 50, 0.1);
+    color: #f44336;
+    border: 1px solid rgba(220, 50, 50, 0.25);
+}
+
 .about-quote {
     font-style: italic;
     margin-top: 1.5em;
