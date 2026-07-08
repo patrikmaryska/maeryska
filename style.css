@@ -817,6 +817,14 @@ h2 {
     transition: transform 0.2s ease;
 }
 
+.video-thumb[data-type="instagram"] {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.video-thumb[data-type="instagram"] .video-play-btn i {
+    color: #fff;
+}
+
 .video-thumb:hover .video-play-btn i {
     transform: scale(1.1);
 }

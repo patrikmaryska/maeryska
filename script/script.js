@@ -274,30 +274,54 @@ function getYouTubeId(url) {
     return match ? match[1] : null;
 }
 
+function getInstagramInfo(url) {
+    const match = url.match(/instagram\.com\/(reel|p|tv)\/([A-Za-z0-9_-]+)/);
+    return match ? { type: match[1], id: match[2] } : null;
+}
+
 function renderVideos() {
     const grid = document.getElementById('video-grid');
     grid.innerHTML = '';
     const pageVideos = paginate(videoItems, videoPage, videosPerPage);
 
     pageVideos.forEach((video, i) => {
-        const id = getYouTubeId(video.youtube);
-        if (!id) return;
-
         const item = document.createElement('div');
         item.className = 'video-item';
-        item.innerHTML = `
-            <div class="video-thumb" data-id="${id}">
-                <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="${video.title}" loading="lazy">
-                <button class="video-play-btn" aria-label="Play ${video.title}">
-                    <i class="fab fa-youtube"></i>
-                </button>
-            </div>
-            <p class="video-title">${video.title}</p>
-        `;
 
-        item.querySelector('.video-thumb').addEventListener('click', function () {
-            this.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-        });
+        if (video.instagram) {
+            const ig = getInstagramInfo(video.instagram);
+            if (!ig) return;
+
+            item.innerHTML = `
+                <div class="video-thumb" data-id="${ig.id}" data-type="instagram">
+                    <button class="video-play-btn" aria-label="Play ${video.title}">
+                        <i class="fab fa-instagram"></i>
+                    </button>
+                </div>
+                <p class="video-title">${video.title}</p>
+            `;
+
+            item.querySelector('.video-thumb').addEventListener('click', function () {
+                this.innerHTML = `<iframe src="https://www.instagram.com/${ig.type}/${ig.id}/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            });
+        } else {
+            const id = getYouTubeId(video.youtube);
+            if (!id) return;
+
+            item.innerHTML = `
+                <div class="video-thumb" data-id="${id}">
+                    <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="${video.title}" loading="lazy">
+                    <button class="video-play-btn" aria-label="Play ${video.title}">
+                        <i class="fab fa-youtube"></i>
+                    </button>
+                </div>
+                <p class="video-title">${video.title}</p>
+            `;
+
+            item.querySelector('.video-thumb').addEventListener('click', function () {
+                this.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            });
+        }
 
         grid.appendChild(item);
         addReveal(item, `${i * 0.1}s`);
