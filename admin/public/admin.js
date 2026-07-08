@@ -139,8 +139,8 @@ function songForm(s) {
     return `
     <form id="song-form" onsubmit="submitSong(event)">
         <div class="form-row">
-            <label>Title *</label>
-            <input name="title" value="${esc(s?.title || '')}" required>
+            <label>Title <span class="req">*</span></label>
+            <input name="title" value="${esc(s?.title || '')}" placeholder="Song title" required>
         </div>
         <div class="form-cols">
             <div class="form-row">
@@ -157,8 +157,8 @@ function songForm(s) {
             <input name="tags" type="text" value="${esc((s?.tags || []).join(', '))}" placeholder="Orchestral, Cinematic, ...">
         </div>
         <div class="form-row">
-            <label>Album Art</label>
-            <input name="img" id="song-img" type="file" accept="image/*">
+            <label>Album Art ${!editMode ? '<span class="req">*</span>' : '<span style="color:var(--muted);font-size:0.75em">(leave blank to keep existing)</span>'}</label>
+            <input name="img" id="song-img" type="file" accept="image/*" ${!editMode ? 'required' : ''}>
             <div class="img-preview-wrap">
                 <img id="song-img-preview" class="img-preview" ${s?.img ? `src="/site-img/${s.img.replace(/^img\//, '')}" style="display:block"` : ''} alt="">
             </div>
@@ -184,7 +184,7 @@ function crossCreateSongHtml() {
         <div class="crosscreate-body" id="cc-news-body">
             <div class="form-cols">
                 <div class="form-row">
-                    <label>News Title (EN)</label>
+                    <label>News Title (EN) <span class="req">*</span></label>
                     <input id="cc-news-title" placeholder="New song released – …">
                 </div>
                 <div class="form-row">
@@ -215,7 +215,7 @@ function crossCreateSongHtml() {
         </label>
         <div class="crosscreate-body" id="cc-video-body">
             <div class="form-row">
-                <label>YouTube URL</label>
+                <label>YouTube URL <span class="req">*</span></label>
                 <input id="cc-video-url" type="url" placeholder="https://www.youtube.com/watch?v=...">
                 <img id="cc-yt-preview" class="yt-preview" alt="">
             </div>
@@ -225,9 +225,16 @@ function crossCreateSongHtml() {
 
 function toggleCrossCreate(bodyId, chk) {
     document.getElementById(bodyId).classList.toggle('open', chk.checked);
+    if (bodyId === 'cc-news-body') {
+        const titleInput = document.getElementById('cc-news-title');
+        if (titleInput) titleInput.required = chk.checked;
+    }
     if (bodyId === 'cc-video-body') {
-        const input = document.getElementById('cc-video-url');
-        if (input) input.addEventListener('input', updateYtPreview);
+        const urlInput = document.getElementById('cc-video-url');
+        if (urlInput) {
+            urlInput.required = chk.checked;
+            urlInput.addEventListener('input', updateYtPreview);
+        }
     }
 }
 
@@ -314,19 +321,19 @@ function newsForm(n) {
         <div class="form-section-title">Titles</div>
         <div class="form-cols">
             <div class="form-row">
-                <label>Title EN *</label>
-                <input name="title" value="${esc(n?.title || '')}" required>
+                <label>Title EN <span class="req">*</span></label>
+                <input name="title" value="${esc(n?.title || '')}" placeholder="News title" required>
             </div>
             <div class="form-row">
                 <label>Title CZ</label>
-                <input name="title_cz" value="${esc(n?.title_cz || '')}">
+                <input name="title_cz" value="${esc(n?.title_cz || '')}" placeholder="Nadpis novinky">
             </div>
         </div>
         <div class="form-section-title">Content</div>
         <div class="form-cols">
             <div class="form-row">
-                <label>Content EN</label>
-                <textarea name="content">${esc(n?.content || '')}</textarea>
+                <label>Content EN <span class="req">*</span></label>
+                <textarea name="content" placeholder="News content…" required>${esc(n?.content || '')}</textarea>
             </div>
             <div class="form-row">
                 <label>Content CZ</label>
@@ -412,11 +419,11 @@ function videoForm(v) {
     return `
     <form id="video-form" onsubmit="submitVideo(event)">
         <div class="form-row">
-            <label>Title *</label>
-            <input name="title" value="${esc(v?.title || '')}" required>
+            <label>Title <span class="req">*</span></label>
+            <input name="title" value="${esc(v?.title || '')}" placeholder="Video title" required>
         </div>
         <div class="form-row">
-            <label>YouTube URL *</label>
+            <label>YouTube URL <span class="req">*</span></label>
             <input name="youtube" id="video-youtube" type="url" value="${esc(v?.youtube || '')}" required placeholder="https://www.youtube.com/watch?v=...">
             <img id="video-yt-preview" class="yt-preview" alt="" ${id ? `src="https://img.youtube.com/vi/${id}/hqdefault.jpg" style="display:block"` : ''}>
         </div>

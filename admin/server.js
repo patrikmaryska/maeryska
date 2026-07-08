@@ -73,9 +73,9 @@ app.post('/api/songs', songUpload, (req, res) => {
         img:     req.file ? `img/songs/${req.file.filename}` : (req.body.imgPath || ''),
         tags:    req.body.tags ? req.body.tags.split(',').map(t => t.trim()).filter(Boolean) : []
     };
-    songs.push(song);
+    songs.unshift(song);
     writeJSON(SONGS_JSON, songs);
-    res.json({ ok: true, song, index: songs.length - 1 });
+    res.json({ ok: true, song, index: 0 });
 });
 
 app.put('/api/songs/:i', songUpload, (req, res) => {

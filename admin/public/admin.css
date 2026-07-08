@@ -281,6 +281,24 @@ body {
     letter-spacing: 0.5px;
 }
 
+.req {
+    color: var(--danger);
+    margin-left: 2px;
+    font-weight: bold;
+}
+
+.form-row input:required:focus:invalid,
+.form-row textarea:required:focus:invalid {
+    border-color: var(--danger);
+    box-shadow: 0 0 0 2px rgba(224, 82, 82, 0.15);
+}
+
+.form-row input[type="file"]:required {
+    outline: 1px dashed rgba(224, 82, 82, 0.55);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
 .form-row input,
 .form-row textarea,
 .form-row select {
